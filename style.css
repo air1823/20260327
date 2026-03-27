@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    font-family: "Microsoft JhengHei", sans-serif;
+    position: relative;
+}
+
+body {
+    background-color: #f3f3f3;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.resume {
+    max-width: 1000px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1, h2, h4 { margin: 0; }
+h4 { color: #ff5252; font-weight: 400; font-size: 14px; letter-spacing: 1px; }
+h2 { font-size: 24px; margin-bottom: 20px; }
+hr { border: none; border-top: 2px solid #ff5252; width: 50px; margin: 15px 0; }
+p { font-size: 14px; line-height: 1.6; color: #555; }
+
+.left {
+    flex: 4;
+    background-color: #f5e0ff;
+    padding: 40px;
+    border-right: 1px solid #eee;
+}
+
+.right {
+    flex: 6;
+    padding: 40px;
+}
+
+.block { margin-bottom: 40px; }
+
+/* Buttons */
+.buttons { margin-top: 20px; }
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.btn1 { background-color: #ff5252; color: white; }
+.btn2 { border: 1px solid #ff5252; color: #ff5252; }
+.btn:hover { opacity: 0.8; }
+
+/* Skills - Circular Progress */
+.list-skill {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.list-skill li {
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-circle-svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+}
+
+.skill-circle-bg { fill: none; stroke: #eee; stroke-width: 5; }
+.skill-circle-bar {
+    fill: none;
+    stroke: #ff5252;
+    stroke-width: 5;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+/* Programming Skill - Progress Bar */
+.listProgram {
+    padding: 0;
+    list-style: none;
+}
+
+.listProgram li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.listProgram li::before {
+    content: attr(data-label);
+    flex: 1;
+}
+
+.prog-bar-container {
+    flex: 2;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.prog-bar-fill {
+    height: 100%;
+    background-color: #ff5252;
+    width: 0;
+    transition: width 1s ease-out;
+}
+
+/* Right Side Content */
+.listTimeline {
+    padding: 0;
+    list-style: none;
+    border-left: 2px solid #eee;
+    padding-left: 20px;
+}
+
+.listTimeline > li {
+    margin-bottom: 30px;
+}
+
+.listTimeline .year {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff5252;
+    margin-bottom: 10px;
+}
+
+.listTimeline .year ul {
+    padding-left: 15px;
+    margin-top: 10px;
+    color: #444;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.listTimeline .year ul li { margin-bottom: 5px; }
+
+.right .block ul { line-height: 1.8; color: #444; font-size: 14px; }
